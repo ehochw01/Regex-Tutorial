@@ -60,17 +60,66 @@ Below is a glossary that breaks down the regex component being used in the email
 ## Regex Components
 
 ### Anchors
+^ signifies a string that begins with the characters that follow it. This can be an exact string match like "^The", or it can signify a range of possible matches, displayed using [bracket expressions](#bracket-expressions).
+
+
+$ signifies a string that ends with the characters that precede it.
+
 
 ### Grouping Constructs
+The main grouping construct is a set of paraenthesis: '()'. This is the primary way to group a section of regex and to break up a regex string into parts. Each section within parentheses is known as a subexpression.
 
 ### Bracket Expressions
+Next we have bracket expression. Anything inside a set of square brackets [] can be considered a set of characters that we atch to match. The brackets outline the set of characters we want to include. 
+Here are same examples:
+
+**[a-z]** The string can contain any lowercase letter between a–z. 
+
+**[0-9]** The string can contain any number between 0–9.
+
+**[_-]** The string can contain an underscore or hyphen.
+
+A bracket expression can be turned into a negative character group by adding the ^ symbol to the beginning of the expression.
+
+	- e.g. The pattern [^aeiouAEIOU] would find any strings that don't include lowercase or uppercase vowels
+
 
 ### Quantifiers
 
+Quantifiers set the limits of the string that your regex matches (or an individual section of the string). They can specific the number of times a pattern should appear as well as the minimum and maximum character length of a pattern.
+
+_*_ Matches the pattern 0 or more times
+
+**+** Matches the pattern 1 or more times
+
+**?** Matches the pattern 0 or 1 time (optional)
+
+**{n}** Matches the pattern exactly n number of times
+
+**{n,}** Matches the pattern at least n number of times
+
+**{min,max}** Specifies the min and max length of a pattern
+
 ### Character Classes
+
+The are different symbols, or character classes that can signify a set of characters in a regex expression. Here are some examples:
+
+**\\d** any digit (0-9)
+
+**\\w** any character A-Z, a-z, or 0-9
+
+**\\s** whitespace
+
+**.** matches any character except a newline (\\n)
+
+**\\W** anything that isn't a \\w character
+
+**\\S** anything that isn't a \\s character
 
 ### Character Escapes
 
-## Eric Hochwald
+Lastly there are character escpaes which are denoated with a backslash (\\). There are some characters that are a regex component such as '.' and '^'. If you want to denoate a literal '.' in your regex, and not the character class '.' (which matches any character except a newline) you would have to include a backslash before it: (\\.).
+
+#### By Eric Hochwald
 
 [Github Profile](https://github.com/ehochw01?tab=repositories)
