@@ -18,7 +18,7 @@ Next we have the second character:
 
 **^**
 
-This more or less signifies the start of a pattern. A string that matches this regex would start with whatever literal characters or patter follow the "^". More on this later.
+This more or less signifies the start of a pattern. A string that matches this regex would start with whatever literal characters or pattern follow the "^". More on this later.
 
 Now onto the first pattern grouping:
 
@@ -63,14 +63,14 @@ Below is a glossary that breaks down the regex component being used in the email
 ^ signifies a string that begins with the characters that follow it. This can be an exact string match like "^The", or it can signify a range of possible matches, displayed using [bracket expressions](#bracket-expressions).
 
 
-$ signifies a string that ends with the characters that precede it.
+**$** signifies a string that ends with the characters that precede it.
 
 
 ### Grouping Constructs
-The main grouping construct is a set of paraenthesis: '()'. This is the primary way to group a section of regex and to break up a regex string into parts. Each section within parentheses is known as a subexpression.
+The main grouping construct is a set of paraenthesis: **()**. This is the primary way to group a section of regex and to break up a regex string into parts. Each section within parentheses is known as a subexpression.
 
 ### Bracket Expressions
-Next we have bracket expression. Anything inside a set of square brackets [] can be considered a set of characters that we atch to match. The brackets outline the set of characters we want to include. 
+Next we have bracket expression. Anything inside a set of square brackets [] can be considered a set of characters that we want to match. The brackets outline the set of characters we want to include. 
 Here are same examples:
 
 **[a-z]** The string can contain any lowercase letter between a–z. 
@@ -79,20 +79,20 @@ Here are same examples:
 
 **[_-]** The string can contain an underscore or hyphen.
 
-A bracket expression can be turned into a negative character group by adding the ^ symbol to the beginning of the expression.
+A bracket expression can be turned into a negative character group by adding the ^ symbol to the beginning of the expression. Note that this is different than the ^ anchor when '^' is within a bracket expression.
 
 	- e.g. The pattern [^aeiouAEIOU] would find any strings that don't include lowercase or uppercase vowels
 
 
 ### Quantifiers
 
-Quantifiers set the limits of the string that your regex matches (or an individual section of the string). They can specific the number of times a pattern should appear as well as the minimum and maximum character length of a pattern.
+Quantifiers set the limits of the string that your regex matches (or an individual section of the string). They can specify the number of times a pattern should appear as well as the minimum and maximum character length of a pattern.
 
 _*_ Matches the pattern 0 or more times
 
 **+** Matches the pattern 1 or more times
 
-**?** Matches the pattern 0 or 1 time (optional)
+**?** Matches the pattern 0 or 1 time (it makes a pattern optional)
 
 **{n}** Matches the pattern exactly n number of times
 
